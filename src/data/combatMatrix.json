@@ -1,0 +1,56 @@
+{
+  "normal": {
+    "unarmored": 1.0,
+    "light": 1.0,
+    "medium": 1.0,
+    "heavy": 1.0,
+    "fortified": 0.7,
+    "divine": 0.5,
+    "hero": 1.0
+  },
+  "pierce": {
+    "unarmored": 1.0,
+    "light": 1.5,
+    "medium": 0.75,
+    "heavy": 0.6,
+    "fortified": 0.35,
+    "divine": 0.5,
+    "hero": 0.75
+  },
+  "siege": {
+    "unarmored": 1.0,
+    "light": 1.0,
+    "medium": 1.0,
+    "heavy": 1.5,
+    "fortified": 1.5,
+    "divine": 0.35,
+    "hero": 0.5
+  },
+  "magic": {
+    "unarmored": 1.0,
+    "light": 1.25,
+    "medium": 1.25,
+    "heavy": 0.6,
+    "fortified": 0.35,
+    "divine": 0.5,
+    "hero": 1.0
+  },
+  "chaos": {
+    "unarmored": 1.0,
+    "light": 1.0,
+    "medium": 1.0,
+    "heavy": 1.0,
+    "fortified": 1.0,
+    "divine": 1.0,
+    "hero": 1.0
+  },
+  "spell": {
+    "unarmored": 1.0,
+    "light": 1.0,
+    "medium": 1.0,
+    "heavy": 1.0,
+    "fortified": 1.0,
+    "divine": 1.0,
+    "hero": 1.0
+  }
+}

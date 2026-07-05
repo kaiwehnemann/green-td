@@ -1,0 +1,21 @@
+{
+  "name": "green-td",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "sim": "tsx scripts/simulate.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "playwright": "^1.61.1",
+    "tsx": "^4.19.2",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "vitest": "^4.1.9"
+  }
+}
