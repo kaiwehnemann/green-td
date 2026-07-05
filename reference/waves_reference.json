@@ -1,0 +1,737 @@
+{
+ "lanes": 9,
+ "waves": [
+  {
+   "wave": 1,
+   "units": [
+    {
+     "code": "hfoo",
+     "name": "Footman",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 2,
+   "units": [
+    {
+     "code": "hrif",
+     "name": "Rifleman",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 3,
+   "units": [
+    {
+     "code": "hsor",
+     "name": "Sorceress",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 4,
+   "units": [
+    {
+     "code": "hspt",
+     "name": "Spell Breaker",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 5,
+   "units": [
+    {
+     "code": "hmpr",
+     "name": "Priest",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 6,
+   "units": [
+    {
+     "code": "hkni",
+     "name": "Knight",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 7,
+   "units": [
+    {
+     "code": "hgyr",
+     "name": "Flying Machine (air)",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 8,
+   "units": [
+    {
+     "code": "hmtm",
+     "name": "Mortar Team",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 9,
+   "units": [
+    {
+     "code": "h01T",
+     "name": "h01T (custom)",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 10,
+   "units": [
+    {
+     "code": "ogru",
+     "name": "Grunt",
+     "perLane": 16,
+     "totalAllLanes": 144
+    }
+   ]
+  },
+  {
+   "wave": 11,
+   "units": [
+    {
+     "code": "ohun",
+     "name": "Headhunter",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 12,
+   "units": [
+    {
+     "code": "o003",
+     "name": "o003 (custom)",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 13,
+   "units": [
+    {
+     "code": "odoc",
+     "name": "Witch Doctor",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 14,
+   "units": [
+    {
+     "code": "oshm",
+     "name": "Shaman",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 15,
+   "units": [
+    {
+     "code": "n00P",
+     "name": "n00P (custom)",
+     "perLane": 16,
+     "totalAllLanes": 144
+    }
+   ]
+  },
+  {
+   "wave": 16,
+   "units": [
+    {
+     "code": "orai",
+     "name": "Raider",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 17,
+   "units": [
+    {
+     "code": "otbr",
+     "name": "Berserker",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 18,
+   "units": [
+    {
+     "code": "okod",
+     "name": "Kodo Beast",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 19,
+   "units": [
+    {
+     "code": "ospw",
+     "name": "Spirit Walker",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 20,
+   "units": [
+    {
+     "code": "otau",
+     "name": "Tauren",
+     "perLane": 24,
+     "totalAllLanes": 216
+    }
+   ]
+  },
+  {
+   "wave": 21,
+   "units": [
+    {
+     "code": "owyv",
+     "name": "Wind Rider (air)",
+     "perLane": 28,
+     "totalAllLanes": 252
+    }
+   ]
+  },
+  {
+   "wave": 22,
+   "units": [
+    {
+     "code": "earc",
+     "name": "Archer",
+     "perLane": 28,
+     "totalAllLanes": 252
+    }
+   ]
+  },
+  {
+   "wave": 23,
+   "units": [
+    {
+     "code": "esen",
+     "name": "Huntress",
+     "perLane": 28,
+     "totalAllLanes": 252
+    }
+   ]
+  },
+  {
+   "wave": 24,
+   "units": [
+    {
+     "code": "edot",
+     "name": "Dryad",
+     "perLane": 28,
+     "totalAllLanes": 252
+    }
+   ]
+  },
+  {
+   "wave": 25,
+   "units": [
+    {
+     "code": "edry",
+     "name": "Druid",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 26,
+   "units": [
+    {
+     "code": "edoc",
+     "name": "Druid of the Claw",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 27,
+   "units": [
+    {
+     "code": "ehip",
+     "name": "Hippogryph (air)",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 28,
+   "units": [
+    {
+     "code": "ewsp",
+     "name": "Wisp",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 29,
+   "units": [
+    {
+     "code": "e003",
+     "name": "e003 (custom)",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 30,
+   "units": [
+    {
+     "code": "e005",
+     "name": "e005 (custom)",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 31,
+   "units": [
+    {
+     "code": "ugho",
+     "name": "Ghoul",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 32,
+   "units": [
+    {
+     "code": "unec",
+     "name": "Necromancer",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 33,
+   "units": [
+    {
+     "code": "uban",
+     "name": "Banshee",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 34,
+   "units": [
+    {
+     "code": "ucry",
+     "name": "Crypt Fiend",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 35,
+   "units": [
+    {
+     "code": "ugar",
+     "name": "Gargoyle (air)",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 36,
+   "units": [
+    {
+     "code": "uobs",
+     "name": "Obsidian Statue",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 37,
+   "units": [
+    {
+     "code": "uabo",
+     "name": "Abomination",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 38,
+   "units": [
+    {
+     "code": "ufro",
+     "name": "Frost Wyrm (air)",
+     "perLane": 36,
+     "totalAllLanes": 324
+    }
+   ]
+  },
+  {
+   "wave": 39,
+   "units": [
+    {
+     "code": "Hmkg",
+     "name": "Mountain King (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 40,
+   "units": [
+    {
+     "code": "Hpal",
+     "name": "Paladin (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 41,
+   "units": [
+    {
+     "code": "Hblm",
+     "name": "Blood Mage (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 42,
+   "units": [
+    {
+     "code": "Hamg",
+     "name": "Archmage (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 43,
+   "units": [
+    {
+     "code": "Obla",
+     "name": "Blademaster (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 44,
+   "units": [
+    {
+     "code": "O004",
+     "name": "O004 (custom)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 45,
+   "units": [
+    {
+     "code": "Ofar",
+     "name": "Far Seer (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 46,
+   "units": [
+    {
+     "code": "Oshd",
+     "name": "Shadow Hunter (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 47,
+   "units": [
+    {
+     "code": "Ekee",
+     "name": "Keeper (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 48,
+   "units": [
+    {
+     "code": "nrdr",
+     "name": "nrdr (custom)",
+     "perLane": 40,
+     "totalAllLanes": 360
+    }
+   ]
+  },
+  {
+   "wave": 49,
+   "units": [
+    {
+     "code": "Edem",
+     "name": "Demon Hunter (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 50,
+   "units": [
+    {
+     "code": "Emoo",
+     "name": "Priestess (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 51,
+   "units": [
+    {
+     "code": "Ewar",
+     "name": "Warden (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 52,
+   "units": [
+    {
+     "code": "Udre",
+     "name": "Dreadlord (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 53,
+   "units": [
+    {
+     "code": "nbdk",
+     "name": "nbdk (custom)",
+     "perLane": 40,
+     "totalAllLanes": 360
+    }
+   ]
+  },
+  {
+   "wave": 54,
+   "units": [
+    {
+     "code": "Udea",
+     "name": "Death Knight (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 55,
+   "units": [
+    {
+     "code": "Ulic",
+     "name": "Lich (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 56,
+   "units": [
+    {
+     "code": "Ucrl",
+     "name": "Crypt Lord (hero)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 57,
+   "units": [
+    {
+     "code": "ninf",
+     "name": "ninf (custom)",
+     "perLane": 12,
+     "totalAllLanes": 108
+    }
+   ]
+  },
+  {
+   "wave": 58,
+   "units": [
+    {
+     "code": "o001",
+     "name": "o001 (custom)",
+     "perLane": 10,
+     "totalAllLanes": 90
+    }
+   ]
+  },
+  {
+   "wave": 59,
+   "units": [
+    {
+     "code": "nnsw",
+     "name": "nnsw (custom)",
+     "perLane": 15,
+     "totalAllLanes": 135
+    }
+   ]
+  },
+  {
+   "wave": 60,
+   "units": [
+    {
+     "code": "o000",
+     "name": "o000 (custom)",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 61,
+   "units": [
+    {
+     "code": "hmil",
+     "name": "hmil (custom)",
+     "perLane": 25,
+     "totalAllLanes": 225
+    }
+   ]
+  },
+  {
+   "wave": 62,
+   "units": [
+    {
+     "code": "osw1",
+     "name": "osw1 (custom)",
+     "perLane": 20,
+     "totalAllLanes": 180
+    }
+   ]
+  },
+  {
+   "wave": 63,
+   "units": [
+    {
+     "code": "ucs1",
+     "name": "ucs1 (custom)",
+     "perLane": 25,
+     "totalAllLanes": 225
+    }
+   ]
+  },
+  {
+   "wave": 64,
+   "units": [
+    {
+     "code": "o002",
+     "name": "o002 (custom)",
+     "perLane": 30,
+     "totalAllLanes": 270
+    }
+   ]
+  },
+  {
+   "wave": 65,
+   "units": [
+    {
+     "code": "ngdk",
+     "name": "ngdk (custom)",
+     "perLane": 48,
+     "totalAllLanes": 432
+    }
+   ]
+  },
+  {
+   "wave": 66,
+   "units": [
+    {
+     "code": "U002",
+     "name": "FINAL BOSS (hero)",
+     "perLane": 0.9,
+     "totalAllLanes": 8
+    },
+    {
+     "code": "nzom",
+     "name": "Zombie",
+     "perLane": 35.6,
+     "totalAllLanes": 320
+    }
+   ]
+  }
+ ]
+}
