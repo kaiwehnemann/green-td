@@ -11,15 +11,18 @@ const STEP_MS = 1000 / 60;
 const MAX_SIM_MS = 20 * 60 * 1000; // 20 minutes of sim time safety cap
 
 const LAYOUT: Array<{ id: string; x: number; y: number }> = [
-  { id: 'ranger_post', x: 1, y: 4 },
-  { id: 'ranger_post', x: 2, y: 4 },
-  { id: 'siege_battery', x: 5, y: 8 },
-  { id: 'frost_spire', x: 9, y: 4 },
-  { id: 'war_totem', x: 9, y: 1 },
-  { id: 'arcane_watcher', x: 13, y: 8 },
-  { id: 'venom_tower', x: 17, y: 6 },
-  { id: 'ranger_post', x: 16, y: 3 },
-  { id: 'siege_battery', x: 20, y: 9 },
+  { id: 'ranger_post', x: 4, y: 2 },
+  { id: 'ranger_post', x: 8, y: 2 },
+  { id: 'siege_battery', x: 12, y: 4 },
+  { id: 'frost_spire', x: 6, y: 4 },
+  { id: 'war_totem', x: 10, y: 4 },
+  { id: 'arcane_watcher', x: 14, y: 6 },
+  { id: 'venom_tower', x: 8, y: 6 },
+  { id: 'ranger_post', x: 16, y: 8 },
+  { id: 'siege_battery', x: 10, y: 8 },
+  { id: 'frost_spire', x: 6, y: 10 },
+  { id: 'arcane_watcher', x: 14, y: 10 },
+  { id: 'ranger_post', x: 10, y: 12 },
 ];
 
 const placedSpots = new Set<string>();

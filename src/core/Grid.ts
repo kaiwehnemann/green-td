@@ -3,25 +3,29 @@ export interface Point {
   y: number;
 }
 
-export const CELL_SIZE = 40;
-export const GRID_COLS = 22;
-export const GRID_ROWS = 14;
+export const CELL_SIZE = 38;
+export const GRID_COLS = 24;
+export const GRID_ROWS = 16;
 
-// Fixed creep path, defined as waypoints in grid cell coordinates.
-// Classic green-maze-style layout: a winding path from left edge to right edge.
+// Fixed creep path in grid cell coordinates. Classic Green TD look: a long
+// serpentine (boustrophedon) lane that winds back and forth across the map,
+// with buildable grass rows between every lane.
 export const PATH_WAYPOINTS_CELLS: Point[] = [
-  { x: -1, y: 2 },
-  { x: 3, y: 2 },
-  { x: 3, y: 6 },
-  { x: 7, y: 6 },
-  { x: 7, y: 2 },
-  { x: 11, y: 2 },
-  { x: 11, y: 10 },
-  { x: 15, y: 10 },
-  { x: 15, y: 4 },
-  { x: 18, y: 4 },
-  { x: 18, y: 11 },
+  { x: -1, y: 1 },
+  { x: 22, y: 1 },
+  { x: 22, y: 3 },
+  { x: 1, y: 3 },
+  { x: 1, y: 5 },
+  { x: 22, y: 5 },
+  { x: 22, y: 7 },
+  { x: 1, y: 7 },
+  { x: 1, y: 9 },
+  { x: 22, y: 9 },
   { x: 22, y: 11 },
+  { x: 1, y: 11 },
+  { x: 1, y: 13 },
+  { x: 22, y: 13 },
+  { x: 24, y: 13 },
 ];
 
 export function cellToWorld(cell: Point): Point {
