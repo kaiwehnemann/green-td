@@ -1,82 +1,79 @@
 import type { ArmorClass, CreepDef, WaveEntry } from '../core/types';
 
-interface WaveSpec {
-  name: string;
-  armorClass: ArmorClass;
-  armor: number;
-  baseHp: number;
-  speed: number;
-  bounty: number;
-  count: number;
-  spawnIntervalMs: number;
-  flags?: CreepDef['flags'];
+// Authentic wave table extracted from the original "Green Circle TD v3.1"
+// (unit type, count, HP, armor, armor class, flying). HP is scaled down by
+// a constant factor to fit single-player tower damage; the relative curve,
+// counts, flying flags and the spell-immune waves (every 5th) are preserved.
+
+interface RawWave {
+  wave: number; name: string; count: number; hp: number; armor: number;
+  armorClass: ArmorClass; flying: boolean; immune: boolean; bounty: number;
 }
 
-const HP_GROWTH = 1.16;
+const RAW: RawWave[] = [
+  { wave: 1, name: "Footman", count: 82, hp: 12, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 4 },
+  { wave: 2, name: "Rifleman", count: 189, hp: 12, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 6 },
+  { wave: 3, name: "Sorceress", count: 24, hp: 17, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 7 },
+  { wave: 4, name: "Spell Breaker", count: 104, hp: 12, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 8 },
+  { wave: 5, name: "Priest", count: 93, hp: 12, armor: 0, armorClass: 'medium', flying: false, immune: true, bounty: 10 },
+  { wave: 6, name: "Knight", count: 185, hp: 14, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 11 },
+  { wave: 7, name: "Flying Machine", count: 133, hp: 22, armor: 0, armorClass: 'medium', flying: true, immune: false, bounty: 12 },
+  { wave: 8, name: "Mortar Team", count: 189, hp: 48, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 13 },
+  { wave: 9, name: "Siege Engine", count: 16, hp: 484, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 15 },
+  { wave: 10, name: "Grunt", count: 121, hp: 15, armor: 0, armorClass: 'medium', flying: false, immune: true, bounty: 16 },
+  { wave: 11, name: "Headhunter", count: 100, hp: 208, armor: 1, armorClass: 'medium', flying: false, immune: false, bounty: 17 },
+  { wave: 12, name: "Witch Doctor", count: 32, hp: 1049, armor: 1, armorClass: 'medium', flying: false, immune: false, bounty: 19 },
+  { wave: 13, name: "Shaman", count: 80, hp: 600, armor: 1, armorClass: 'medium', flying: false, immune: false, bounty: 20 },
+  { wave: 14, name: "Raider", count: 182, hp: 480, armor: 1, armorClass: 'medium', flying: false, immune: false, bounty: 21 },
+  { wave: 15, name: "Tauren", count: 28, hp: 780, armor: 1, armorClass: 'medium', flying: false, immune: true, bounty: 22 },
+  { wave: 16, name: "Kodo Beast", count: 121, hp: 1779, armor: 0, armorClass: 'medium', flying: false, immune: false, bounty: 24 },
+  { wave: 17, name: "Berserker", count: 40, hp: 6716, armor: 1, armorClass: 'medium', flying: true, immune: false, bounty: 25 },
+  { wave: 18, name: "Spirit Walker", count: 20, hp: 16493, armor: 1, armorClass: 'medium', flying: false, immune: false, bounty: 26 },
+  { wave: 19, name: "Ghoul", count: 200, hp: 2102, armor: 2, armorClass: 'hero', flying: false, immune: false, bounty: 28 },
+  { wave: 20, name: "Crypt Fiend", count: 70, hp: 1601, armor: 2, armorClass: 'medium', flying: false, immune: true, bounty: 29 },
+  { wave: 21, name: "Banshee", count: 25, hp: 25000, armor: 2, armorClass: 'hero', flying: false, immune: false, bounty: 30 },
+  { wave: 22, name: "Necromancer", count: 105, hp: 8364, armor: 2, armorClass: 'hero', flying: false, immune: false, bounty: 32 },
+  { wave: 23, name: "Gargoyle", count: 20, hp: 25000, armor: 16, armorClass: 'hero', flying: true, immune: false, bounty: 33 },
+  { wave: 24, name: "Abomination", count: 140, hp: 5761, armor: 8, armorClass: 'hero', flying: false, immune: false, bounty: 34 },
+  { wave: 25, name: "Meat Wagon", count: 111, hp: 1682, armor: 8, armorClass: 'medium', flying: false, immune: true, bounty: 36 },
+  { wave: 26, name: "Obsidian Statue", count: 20, hp: 25000, armor: 30, armorClass: 'hero', flying: false, immune: false, bounty: 37 },
+  { wave: 27, name: "Frost Wyrm", count: 200, hp: 6113, armor: 8, armorClass: 'hero', flying: true, immune: false, bounty: 38 },
+  { wave: 28, name: "Blademaster", count: 15, hp: 21417, armor: 40, armorClass: 'medium', flying: false, immune: false, bounty: 39 },
+  { wave: 29, name: "Demon Hunter", count: 165, hp: 15317, armor: 45, armorClass: 'medium', flying: false, immune: false, bounty: 41 },
+  { wave: 30, name: "Mountain King", count: 200, hp: 1948, armor: 50, armorClass: 'medium', flying: false, immune: true, bounty: 42 },
+  { wave: 31, name: "Infernal", count: 30, hp: 22162, armor: 55, armorClass: 'medium', flying: false, immune: false, bounty: 43 },
+  { wave: 32, name: "Naga Sea Witch", count: 80, hp: 22355, armor: 60, armorClass: 'medium', flying: false, immune: false, bounty: 45 },
+  { wave: 33, name: "Crypt Lord", count: 15, hp: 22555, armor: 75, armorClass: 'medium', flying: false, immune: false, bounty: 46 },
+  { wave: 34, name: "Death Knight", count: 200, hp: 15317, armor: 80, armorClass: 'medium', flying: false, immune: false, bounty: 47 },
+  { wave: 35, name: "Red Dragon", count: 145, hp: 23475, armor: 85, armorClass: 'hero', flying: true, immune: false, bounty: 48 },
+  { wave: 36, name: "Spirit", count: 120, hp: 7543, armor: 90, armorClass: 'hero', flying: false, immune: false, bounty: 50 },
+];
 
-function scaledHp(base: number, wave: number): number {
-  return Math.round(base * Math.pow(HP_GROWTH, wave - 1));
-}
+export const TOTAL_WAVES = RAW.length;
 
-const SPECS: Record<number, WaveSpec> = {
-  1: { name: 'Sprig Crawler', armorClass: 'unarmored', armor: 0, baseHp: 40, speed: 80, bounty: 3, count: 10, spawnIntervalMs: 700 },
-  2: { name: 'Sprig Crawler', armorClass: 'unarmored', armor: 0, baseHp: 40, speed: 82, bounty: 3, count: 12, spawnIntervalMs: 650 },
-  3: { name: 'Leaf Skitter', armorClass: 'light', armor: 2, baseHp: 55, speed: 95, bounty: 4, count: 12, spawnIntervalMs: 650 },
-  4: { name: 'Leaf Skitter', armorClass: 'light', armor: 2, baseHp: 55, speed: 98, bounty: 4, count: 14, spawnIntervalMs: 600 },
-  5: { name: 'Bramble Hulk', armorClass: 'medium', armor: 4, baseHp: 90, speed: 70, bounty: 6, count: 12, spawnIntervalMs: 700 },
-  6: { name: 'Bramble Hulk', armorClass: 'medium', armor: 4, baseHp: 90, speed: 72, bounty: 6, count: 14, spawnIntervalMs: 650 },
-  7: { name: 'Leaf Skitter', armorClass: 'light', armor: 3, baseHp: 70, speed: 105, bounty: 5, count: 18, spawnIntervalMs: 500 },
-  8: { name: 'Gust Wisp', armorClass: 'unarmored', armor: 0, baseHp: 65, speed: 110, bounty: 6, count: 16, spawnIntervalMs: 550, flags: { flying: true } },
-  9: { name: 'Bramble Hulk', armorClass: 'medium', armor: 5, baseHp: 110, speed: 74, bounty: 7, count: 16, spawnIntervalMs: 600 },
-  10: { name: 'Ironbark Golem', armorClass: 'heavy', armor: 8, baseHp: 220, speed: 55, bounty: 12, count: 10, spawnIntervalMs: 900 },
-  11: { name: 'Leaf Skitter', armorClass: 'light', armor: 4, baseHp: 85, speed: 108, bounty: 6, count: 20, spawnIntervalMs: 480 },
-  12: { name: 'Shade Lurker', armorClass: 'medium', armor: 5, baseHp: 130, speed: 85, bounty: 9, count: 16, spawnIntervalMs: 560, flags: { invisible: true } },
-  13: { name: 'Ironbark Golem', armorClass: 'heavy', armor: 9, baseHp: 260, speed: 56, bounty: 13, count: 12, spawnIntervalMs: 850 },
-  14: { name: 'Gust Wisp', armorClass: 'unarmored', armor: 0, baseHp: 90, speed: 115, bounty: 7, count: 20, spawnIntervalMs: 500, flags: { flying: true } },
-  15: { name: 'Bramble Hulk', armorClass: 'medium', armor: 6, baseHp: 150, speed: 78, bounty: 9, count: 20, spawnIntervalMs: 550 },
-  16: { name: 'Quickfoot Sprite', armorClass: 'light', armor: 4, baseHp: 100, speed: 120, bounty: 8, count: 20, spawnIntervalMs: 480, flags: { evasionChance: 0.5 } },
-  17: { name: 'Ironbark Golem', armorClass: 'heavy', armor: 10, baseHp: 320, speed: 58, bounty: 15, count: 14, spawnIntervalMs: 800 },
-  18: { name: 'Shade Lurker', armorClass: 'medium', armor: 6, baseHp: 170, speed: 88, bounty: 10, count: 20, spawnIntervalMs: 520, flags: { invisible: true } },
-  19: { name: 'Gust Wisp', armorClass: 'unarmored', armor: 2, baseHp: 140, speed: 118, bounty: 9, count: 22, spawnIntervalMs: 460, flags: { flying: true } },
-  20: { name: 'Rimehide Beast', armorClass: 'heavy', armor: 11, baseHp: 380, speed: 60, bounty: 16, count: 16, spawnIntervalMs: 750, flags: { frostImmune: true } },
-  21: { name: 'Quickfoot Sprite', armorClass: 'light', armor: 5, baseHp: 130, speed: 125, bounty: 9, count: 24, spawnIntervalMs: 440, flags: { evasionChance: 0.5 } },
-  22: { name: 'Stone Warden', armorClass: 'fortified', armor: 14, baseHp: 520, speed: 50, bounty: 20, count: 14, spawnIntervalMs: 850 },
-  23: { name: 'Shade Lurker', armorClass: 'medium', armor: 7, baseHp: 210, speed: 90, bounty: 11, count: 22, spawnIntervalMs: 500, flags: { invisible: true } },
-  24: { name: 'Rimehide Beast', armorClass: 'heavy', armor: 12, baseHp: 440, speed: 62, bounty: 17, count: 18, spawnIntervalMs: 700, flags: { frostImmune: true } },
-  25: { name: 'Gust Wisp', armorClass: 'unarmored', armor: 3, baseHp: 190, speed: 122, bounty: 10, count: 26, spawnIntervalMs: 420, flags: { flying: true } },
-  26: { name: 'Stone Warden', armorClass: 'fortified', armor: 16, baseHp: 620, speed: 52, bounty: 22, count: 16, spawnIntervalMs: 800 },
-  27: { name: 'Quickfoot Sprite', armorClass: 'light', armor: 6, baseHp: 170, speed: 128, bounty: 11, count: 26, spawnIntervalMs: 400, flags: { evasionChance: 0.5 } },
-  28: { name: 'Shade Lurker', armorClass: 'medium', armor: 8, baseHp: 260, speed: 92, bounty: 13, count: 24, spawnIntervalMs: 460, flags: { invisible: true } },
-  29: { name: 'Rimehide Beast', armorClass: 'heavy', armor: 14, baseHp: 520, speed: 64, bounty: 19, count: 22, spawnIntervalMs: 620, flags: { frostImmune: true } },
-  30: {
-    name: 'Verdant Colossus', armorClass: 'divine', armor: 20, baseHp: 24000, speed: 45, bounty: 500,
-    count: 1, spawnIntervalMs: 0, flags: { boss: true },
-  },
-};
+export const WAVES: WaveEntry[] = RAW.map((r) => {
+  const creep: CreepDef = {
+    id: `wave${r.wave}`,
+    name: r.name,
+    armorClass: r.armorClass,
+    armor: r.armor,
+    hp: r.hp,
+    speed: 70 + Math.min(40, r.wave),
+    bounty: r.bounty,
+    lifeLoss: 1,
+    flags: {
+      flying: r.flying || undefined,
+      immune: r.immune || undefined,
+      frostImmune: r.immune || undefined,
+      boss: r.wave === TOTAL_WAVES || undefined,
+    },
+  };
+  const spawnIntervalMs = Math.max(180, Math.round(9000 / r.count));
+  return { wave: r.wave, creep, count: r.count, spawnIntervalMs };
+});
 
-export function buildWaves(): WaveEntry[] {
-  const waves: WaveEntry[] = [];
-  for (let wave = 1; wave <= 30; wave++) {
-    const spec = SPECS[wave];
-    const creep: CreepDef = {
-      id: `wave${wave}_${spec.name.toLowerCase().replace(/\s+/g, '_')}`,
-      name: spec.name,
-      armorClass: spec.armorClass,
-      armor: spec.armor,
-      hp: wave === 30 ? spec.baseHp : scaledHp(spec.baseHp, wave),
-      speed: spec.speed,
-      bounty: spec.bounty,
-      lifeLoss: spec.flags?.boss ? 10 : 1,
-      flags: spec.flags,
-    };
-    waves.push({ wave, creep, count: spec.count, spawnIntervalMs: spec.spawnIntervalMs });
-  }
-  return waves;
-}
-
-export const WAVES: WaveEntry[] = buildWaves();
-
-/** Boss (wave 30) special ability: every 20s, stacks a debuff on all towers in range, reducing their damage. */
+// Final-wave boss ability (kept from the earlier design): periodically weakens
+// nearby towers with a stacking damage debuff.
 export const BOSS_RESONANCE_INTERVAL_MS = 20000;
 export const BOSS_RESONANCE_RADIUS = 220;
-export const BOSS_RESONANCE_DAMAGE_REDUCTION_PER_STACK = 0.08;
+export const BOSS_RESONANCE_DAMAGE_REDUCTION_PER_STACK = 0.06;

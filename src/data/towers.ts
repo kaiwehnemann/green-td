@@ -7,10 +7,10 @@ export const TOWERS: TowerDef[] = [
     description: 'Fast single-target pierce shots. Excellent against lightly armored foes.',
     color: '#6fae3d',
     tiers: [
-      { tier: 1, cost: 50, damage: 12, cooldownMs: 500, range: 140, attackType: 'pierce', armorReduction: 1, armorReductionDurationMs: 2000 },
-      { tier: 2, cost: 75, damage: 20, cooldownMs: 460, range: 150, attackType: 'pierce', armorReduction: 2, armorReductionDurationMs: 2000 },
-      { tier: 3, cost: 150, damage: 34, cooldownMs: 420, range: 160, attackType: 'pierce', armorReduction: 3, armorReductionDurationMs: 2200 },
-      { tier: 4, cost: 320, damage: 58, cooldownMs: 360, range: 175, attackType: 'pierce', armorReduction: 4, armorReductionDurationMs: 2200 },
+      { tier: 1, cost: 50, damage: 403, cooldownMs: 500, range: 140, attackType: 'pierce', armorReduction: 1, armorReductionDurationMs: 2000 },
+      { tier: 2, cost: 75, damage: 672, cooldownMs: 460, range: 150, attackType: 'pierce', armorReduction: 2, armorReductionDurationMs: 2000 },
+      { tier: 3, cost: 150, damage: 1142, cooldownMs: 420, range: 160, attackType: 'pierce', armorReduction: 3, armorReductionDurationMs: 2200 },
+      { tier: 4, cost: 320, damage: 1949, cooldownMs: 360, range: 175, attackType: 'pierce', armorReduction: 4, armorReductionDurationMs: 2200 },
     ],
   },
   {
@@ -19,10 +19,10 @@ export const TOWERS: TowerDef[] = [
     description: 'Slow splash damage, devastating against heavy armor and fortifications.',
     color: '#8a6d3b',
     tiers: [
-      { tier: 1, cost: 90, damage: 30, cooldownMs: 1400, range: 130, attackType: 'siege', splashRadius: 45 },
-      { tier: 2, cost: 140, damage: 48, cooldownMs: 1350, range: 140, attackType: 'siege', splashRadius: 50 },
-      { tier: 3, cost: 260, damage: 78, cooldownMs: 1300, range: 150, attackType: 'siege', splashRadius: 58 },
-      { tier: 4, cost: 480, damage: 130, cooldownMs: 1200, range: 165, attackType: 'siege', splashRadius: 65 },
+      { tier: 1, cost: 90, damage: 1008, cooldownMs: 1400, range: 130, attackType: 'siege', splashRadius: 45 },
+      { tier: 2, cost: 140, damage: 1613, cooldownMs: 1350, range: 140, attackType: 'siege', splashRadius: 50 },
+      { tier: 3, cost: 260, damage: 2621, cooldownMs: 1300, range: 150, attackType: 'siege', splashRadius: 58 },
+      { tier: 4, cost: 480, damage: 4368, cooldownMs: 1200, range: 165, attackType: 'siege', splashRadius: 65 },
     ],
   },
   {
@@ -32,19 +32,19 @@ export const TOWERS: TowerDef[] = [
     color: '#5ec9d6',
     tiers: [
       {
-        tier: 1, cost: 80, damage: 8, cooldownMs: 700, range: 130, attackType: 'magic',
+        tier: 1, cost: 80, damage: 269, cooldownMs: 700, range: 130, attackType: 'magic',
         slowFactor: 0.7, slowDurationMs: 1500,
       },
       {
-        tier: 2, cost: 120, damage: 14, cooldownMs: 650, range: 140, attackType: 'magic',
+        tier: 2, cost: 120, damage: 470, cooldownMs: 650, range: 140, attackType: 'magic',
         slowFactor: 0.6, slowDurationMs: 1600,
       },
       {
-        tier: 3, cost: 220, damage: 24, cooldownMs: 600, range: 150, attackType: 'magic',
+        tier: 3, cost: 220, damage: 806, cooldownMs: 600, range: 150, attackType: 'magic',
         slowFactor: 0.5, slowDurationMs: 1700,
       },
       {
-        tier: 4, cost: 400, damage: 40, cooldownMs: 550, range: 165, attackType: 'magic',
+        tier: 4, cost: 400, damage: 1344, cooldownMs: 550, range: 165, attackType: 'magic',
         slowFactor: 0.4, slowDurationMs: 1800,
       },
     ],
@@ -80,19 +80,19 @@ export const TOWERS: TowerDef[] = [
     color: '#9b6fd6',
     tiers: [
       {
-        tier: 1, cost: 110, damage: 14, cooldownMs: 800, range: 150, attackType: 'magic',
+        tier: 1, cost: 110, damage: 470, cooldownMs: 800, range: 150, attackType: 'magic',
         trueSight: true, canTargetFlying: true,
       },
       {
-        tier: 2, cost: 170, damage: 22, cooldownMs: 760, range: 160, attackType: 'magic',
+        tier: 2, cost: 170, damage: 739, cooldownMs: 760, range: 160, attackType: 'magic',
         trueSight: true, canTargetFlying: true,
       },
       {
-        tier: 3, cost: 300, damage: 38, cooldownMs: 700, range: 175, attackType: 'magic',
+        tier: 3, cost: 300, damage: 1277, cooldownMs: 700, range: 175, attackType: 'magic',
         trueSight: true, canTargetFlying: true,
       },
       {
-        tier: 4, cost: 540, damage: 64, cooldownMs: 640, range: 190, attackType: 'magic',
+        tier: 4, cost: 540, damage: 2150, cooldownMs: 640, range: 190, attackType: 'magic',
         trueSight: true, canTargetFlying: true,
       },
     ],
@@ -104,25 +104,25 @@ export const TOWERS: TowerDef[] = [
     color: '#4f8a3d',
     tiers: [
       {
-        tier: 1, cost: 95, damage: 6, cooldownMs: 900, range: 125, attackType: 'chaos',
-        poisonDps: 4, poisonDurationMs: 3000,
+        tier: 1, cost: 95, damage: 202, cooldownMs: 900, range: 125, attackType: 'chaos',
+        poisonDps: 112, poisonDurationMs: 3000,
       },
       {
-        tier: 2, cost: 150, damage: 10, cooldownMs: 860, range: 135, attackType: 'chaos',
-        poisonDps: 7, poisonDurationMs: 3200,
+        tier: 2, cost: 150, damage: 336, cooldownMs: 860, range: 135, attackType: 'chaos',
+        poisonDps: 196, poisonDurationMs: 3200,
       },
       {
-        tier: 3, cost: 270, damage: 17, cooldownMs: 800, range: 145, attackType: 'chaos',
-        poisonDps: 12, poisonDurationMs: 3400,
+        tier: 3, cost: 270, damage: 571, cooldownMs: 800, range: 145, attackType: 'chaos',
+        poisonDps: 336, poisonDurationMs: 3400,
       },
       {
-        tier: 4, cost: 480, damage: 28, cooldownMs: 740, range: 160, attackType: 'chaos',
-        poisonDps: 20, poisonDurationMs: 3600,
+        tier: 4, cost: 480, damage: 941, cooldownMs: 740, range: 160, attackType: 'chaos',
+        poisonDps: 560, poisonDurationMs: 3600,
       },
     ],
   },
 ];
 
 export const SELL_RATIO = 1.0; // classic archer-exploit default: full refund on sell
-export const STARTING_GOLD = 200;
+export const STARTING_GOLD = 172; // authentic Green Circle TD starting gold
 export const STARTING_LIVES = 20;

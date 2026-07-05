@@ -50,6 +50,24 @@ function invest(game: Game): void {
       }
     }
 
+    // Fill any remaining buildable cell with a mix of towers (stress test).
+    if (FILL_ALL) {
+      let idx = game.towers.length;
+      for (let x = 0; x < GRID_COLS && !progressed; x++) {
+        for (let y = 0; y < GRID_ROWS; y++) {
+          if (!isBuildable(x, y)) continue;
+          if (game.towers.some((t) => t.cellX === x && t.cellY === y)) continue;
+          const def = TOWERS[idx % TOWERS.length];
+          if (!game.economy.canAfford(def.tiers[0].cost)) continue;
+          game.setBuildingTower(def);
+          if (game.tryPlaceTower(x, y)) {
+            progressed = true;
+            break;
+          }
+        }
+      }
+    }
+
     const upgradable = game.towers
       .filter((t) => t.canUpgrade && game.economy.canAfford(t.nextTier!.cost))
       .sort((a, b) => a.nextTier!.cost - b.nextTier!.cost);
@@ -60,6 +78,8 @@ function invest(game: Game): void {
     }
   }
 }
+
+const FILL_ALL = process.argv.includes('--fill');
 
 function main(): void {
   let finished = false;

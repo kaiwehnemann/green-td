@@ -17,6 +17,12 @@ export interface CreepFlags {
   evasionChance?: number;
   invisible?: boolean;
   boss?: boolean;
+  /**
+   * Spell-immune creeps (every 5th wave in the original Green Circle TD):
+   * immune to frost slow, take only 1/4 damage from non-chaos towers, and
+   * take 5x damage from chaos towers.
+   */
+  immune?: boolean;
 }
 
 export interface CreepDef {

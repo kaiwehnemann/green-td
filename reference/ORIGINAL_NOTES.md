@@ -1,4 +1,28 @@
-# Referenzdaten aus der Original-Karte „Green TD v36.0"
+# Referenzdaten aus den Original-Karten
+
+Es liegen zwei Originale vor:
+- **`Green_Circle_TD_3.1`** — das *klassische* Green (Circle) TD, 36 Wellen,
+  eine Bahn pro Spieler. **Diese Werte werden im Nachbau verwendet** (siehe
+  `green_circle_td_waves.json`).
+- **`Green TD v36.0`** — eine stark aufgebohrte Mehrspieler-Variante mit 66
+  Wellen (siehe `waves_reference.json`), unten dokumentiert.
+
+## Green Circle TD 3.1 — verwendete echte Werte
+
+- **36 Wellen**, exakte Einheiten/Anzahl/HP/Rüstung aus `war3map.j` +
+  `war3map.w3u` (HP für den Solo-Nachbau um Faktor 20 herunterskaliert, echte
+  Kurve/Anzahl/Flug erhalten).
+- **Startgold: 172.** Kopfgeld = „Point Value" pro Kill.
+- **Spell-Immun alle 5 Wellen** (5, 10, 15, 20, 25, 30): immun gegen
+  Frost-Verlangsamung, nehmen nur **¼ Schaden** von normalen Türmen, aber
+  **5× Schaden von Chaos-Türmen** — im Nachbau umgesetzt.
+- **Flug-Wellen:** 7, 17, 23, 27, 35 (nur Luft-fähige Türme treffen sie).
+- **Turm-Familien im Original:** Siege, Poison, Chaos, Frost/Ice, Air, Aura
+  (Speed/Damage). Der Nachbau bildet diese Rollen mit seinen sechs Türmen ab.
+
+---
+
+# Referenzdaten aus der Karte „Green TD v36.0" (Mehrspieler-Variante)
 
 Diese Datei dokumentiert **Fakten**, die aus der Original-Warcraft-3-Karte
 (`Green_TD_36.0.w3x`) extrahiert wurden, um einen eigenständigen Nachbau

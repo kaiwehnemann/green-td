@@ -210,12 +210,16 @@ export class Game {
         this.damageNumbers.spawn(creep.x, creep.y, 0, this.nowMs);
         continue;
       }
-      const dmg = calculateDamage({
+      let dmg = calculateDamage({
         baseDamage: tier.damage,
         attackType: tier.attackType,
         armorClass: creep.def.armorClass,
         armor: creep.effectiveArmor,
       });
+      // Spell-immune waves: chaos towers deal 5x, everything else only 1/4.
+      if (creep.def.flags?.immune) {
+        dmg *= tier.attackType === 'chaos' ? 5 : 0.25;
+      }
       creep.takeDamage(dmg, this.nowMs);
       this.damageNumbers.spawn(creep.x, creep.y - 12, dmg, this.nowMs);
 
